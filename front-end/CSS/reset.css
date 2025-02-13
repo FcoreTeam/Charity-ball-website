@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+html {
+  overflow: auto;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+body::-webkit-scrollbar {
+  width: 0;
+}
+button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  scale: 1.05;
+}
