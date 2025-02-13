@@ -249,6 +249,7 @@ header {
 .place__title {
   font-size: 56px;
   font-family: "oranienbaum";
+  color: #232323;
 }
 .place__name {
   color: #ae936b;
@@ -258,6 +259,18 @@ header {
 .place__info {
   display: flex;
   margin-top: 40px;
+  position: relative;
+}
+.place__particle {
+  position: absolute;
+  width: 626px;
+  height: 939px;
+  border: 1px solid #ae936b;
+  left: -20px;
+  bottom: -20px;
+}
+.place__image {
+  z-index: 2;
 }
 .place__description {
   font-size: 18px;
@@ -271,4 +284,42 @@ header {
   color: #232323;
   font-size: 32px;
   line-height: 36.96px;
+}
+.souvenirs {
+  width: 100%;
+  background: #ece6dd;
+  height: fit-content;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.souvenirs__wrap {
+  max-width: 1305px;
+  display: flex;
+}
+.souvenirs__info {
+  width: 50%;
+  height: 100%;
+}
+.souvenirs__title {
+  font-size: 56px;
+  color: #232323;
+  font-family: "oranienbaum";
+}
+.souvenirs__description {
+  font-family: "roboto";
+  font-size: 18px;
+  color: #666666;
+  line-height: 27px;
+  margin-top: 20px;
+  padding-right: 50px;
+}
+.souvenirs__subtitle {
+  font-size: 32px;
+  margin-top: 40px;
+  color: #232323;
+  font-family: "oranienbaum";
 }
