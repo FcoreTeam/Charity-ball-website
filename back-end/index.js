@@ -11,7 +11,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  'http://localhost'
 ];
+
 
 app.listen(PORT, () => {
   console.log(`Сервер пашет на ${PORT}!`);

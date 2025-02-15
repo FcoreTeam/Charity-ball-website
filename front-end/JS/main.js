@@ -23,14 +23,40 @@ sendBtn.addEventListener("click", () => {
 
   let data = compareData(initials, phone, telegram, people, help, rental);
   sendRequest(data);
+  console.log(data);
 });
 
 const sendRequest = async (data) => {
-  return await fetch("", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    const response = await fetch("http://localhost:3000/send_mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      mode: "cors",
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      console.log("Отправлено");
+      return await response.json();
+    } else {
+      const errorData = await response.json();
+      throw new Error(
+        `Ошибка: ${response.status} - ${
+          errorData.message || response.statusText
+        }`
+      );
+    }
+  } catch (error) {
+    console.error("Ошибка при отправке запроса:", error);
+  }
+};
+const burgerHandle = (state) => {
+  const burger = document.querySelector(".burger__menu");
+  if (state === 1) {
+    burger.classList.add("burger__open");
+  } else {
+    burger.classList.remove("burger__open");
+  }
 };

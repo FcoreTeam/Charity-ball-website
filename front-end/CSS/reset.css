@@ -33,3 +33,10 @@ button {
 button:hover {
   scale: 1.05;
 }
+input:focus {
+  outline: none;
+}
+a{
+  text-decoration: none;
+  color: #232323;
+}
