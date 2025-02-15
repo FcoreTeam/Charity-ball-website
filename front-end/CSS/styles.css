@@ -406,7 +406,7 @@ header {
   flex-flow: column;
   justify-content: space-between;
 }
-.program__img{
+.program__img {
   align-self: flex-end;
   width: 300px;
   height: 300px;
@@ -549,18 +549,33 @@ header {
   display: flex;
   width: 50%;
   align-items: center;
+  cursor: pointer;
 }
 .fake__checkbox {
   min-height: 32px;
   min-width: 32px;
   border: 1px solid #ffffff52;
   border-radius: 4px;
+  position: relative;
 }
 #rental,
 #help {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+  min-height: 35px;
+  min-width: 35px;
+  position: absolute;
+  opacity: 0; 
+  z-index: 3;
+}
+.checkbox__active__help,
+.checkbox__active__rental {
+  height: 32px;
+  width: 32px;
+  background: #ece6dd !important;
+  display: none;
+  position: absolute;
+}
+.show{
+  display: block;
 }
 .checkbox__title {
   margin-left: 20px;
@@ -904,7 +919,7 @@ footer {
   .header__btn {
     margin-right: 30px;
   }
-  .program__img{
+  .program__img {
     display: none;
   }
   .burger__menu__wrap {

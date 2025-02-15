@@ -26,9 +26,34 @@ sendBtn.addEventListener("click", () => {
   console.log(data);
 });
 
+const checkboxHandle = () => {
+  const help = document.querySelector("#help").checked; // Получаем состояние чекбокса "help"
+  const rental = document.querySelector("#rental").checked; // Получаем состояние чекбокса "rental"
+  const activeCheckOne = document.querySelector(".checkbox__active__help"); // Элемент, который будет показан/скрыт для "help"
+  const activeCheckTwo = document.querySelector(".checkbox__active__rental"); // Элемент, который будет показан/скрыт для "rental"
+
+  // Управляем отображением для чекбокса "help"
+  if (help) {
+    activeCheckOne.classList.add("show"); // Показываем элемент, если чекбокс "help" отмечен
+  } else {
+    activeCheckOne.classList.remove("show"); // Скрываем элемент, если чекбокс "help" не отмечен
+  }
+
+  // Управляем отображением для чекбокса "rental"
+  if (rental) {
+    activeCheckTwo.classList.add("show"); // Показываем элемент, если чекбокс "rental" отмечен
+  } else {
+    activeCheckTwo.classList.remove("show"); // Скрываем элемент, если чекбокс "rental" не отмечен
+  }
+};
+
+// Не забудьте добавить обработчик события для чекбоксов
+document.querySelector("#help").addEventListener("change", checkboxHandle);
+document.querySelector("#rental").addEventListener("change", checkboxHandle);
+
 const sendRequest = async (data) => {
   try {
-    const response = await fetch("http://localhost:3000/send_mail", {
+    const response = await fetch("https://api.bal-kekina.ru/send_mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -38,7 +63,7 @@ const sendRequest = async (data) => {
     });
 
     if (response.ok) {
-      console.log("Отправлено");
+      alert("Отправлено");
       return await response.json();
     } else {
       const errorData = await response.json();
