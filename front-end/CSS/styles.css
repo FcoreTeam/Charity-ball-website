@@ -28,6 +28,7 @@ header {
   text-transform: uppercase;
   margin-left: 40px;
   color: #232323;
+  cursor: pointer;
 }
 .header__list > a:first-child {
   margin-left: 0;
@@ -688,6 +689,7 @@ footer {
   color: #fff;
   align-self: flex-end;
   font-size: 18px;
+  cursor: pointer;
 }
 #map {
   max-width: 1305px;

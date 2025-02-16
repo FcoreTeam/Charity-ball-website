@@ -27,27 +27,40 @@ sendBtn.addEventListener("click", () => {
 });
 
 const checkboxHandle = () => {
-  const help = document.querySelector("#help").checked; // Получаем состояние чекбокса "help"
-  const rental = document.querySelector("#rental").checked; // Получаем состояние чекбокса "rental"
-  const activeCheckOne = document.querySelector(".checkbox__active__help"); // Элемент, который будет показан/скрыт для "help"
-  const activeCheckTwo = document.querySelector(".checkbox__active__rental"); // Элемент, который будет показан/скрыт для "rental"
+  const help = document.querySelector("#help").checked;
+  const rental = document.querySelector("#rental").checked;
+  const activeCheckOne = document.querySelector(".checkbox__active__help");
+  const activeCheckTwo = document.querySelector(".checkbox__active__rental");
 
-  // Управляем отображением для чекбокса "help"
   if (help) {
-    activeCheckOne.classList.add("show"); // Показываем элемент, если чекбокс "help" отмечен
+    activeCheckOne.classList.add("show");
   } else {
-    activeCheckOne.classList.remove("show"); // Скрываем элемент, если чекбокс "help" не отмечен
+    activeCheckOne.classList.remove("show");
   }
 
-  // Управляем отображением для чекбокса "rental"
   if (rental) {
-    activeCheckTwo.classList.add("show"); // Показываем элемент, если чекбокс "rental" отмечен
+    activeCheckTwo.classList.add("show");
   } else {
-    activeCheckTwo.classList.remove("show"); // Скрываем элемент, если чекбокс "rental" не отмечен
+    activeCheckTwo.classList.remove("show");
   }
 };
 
-// Не забудьте добавить обработчик события для чекбоксов
+const headerHandle = (type) => {
+  const ballSchedule = document.querySelector(".ball__schedule");
+  const partners = document.querySelector(".partners");
+  const souvenirs = document.querySelector(".souvenirs");
+  const contacts = document.querySelector(".form");
+  if (type === "Наполнение вечера") {
+    ballSchedule.scrollIntoView({ behavior: "smooth" });
+  } else if (type === "Партнёры") {
+    partners.scrollIntoView({ behavior: "smooth" });
+  } else if (type === "Сувениры") {
+    souvenirs.scrollIntoView({ behavior: "smooth" });
+  } else if (type === "Контакты") {
+    contacts.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 document.querySelector("#help").addEventListener("change", checkboxHandle);
 document.querySelector("#rental").addEventListener("change", checkboxHandle);
 
