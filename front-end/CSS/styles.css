@@ -6,6 +6,20 @@
   font-family: "oranienbaum";
   src: url("../FONT/oranienbaum.ttf");
 }
+.telegram__widget {
+  width: 67px;
+  height: 67px;
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  bottom: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.telegram__img{
+  width: 67px;
+  height: 67px;
+}
 /* header */
 header {
   background: #ece6dd;
@@ -43,6 +57,9 @@ header {
   letter-spacing: 1px;
   font-size: 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
 }
 /* intro */
@@ -564,7 +581,7 @@ header {
   min-height: 35px;
   min-width: 35px;
   position: absolute;
-  opacity: 0; 
+  opacity: 0;
   z-index: 3;
 }
 .checkbox__active__help,
@@ -575,7 +592,7 @@ header {
   display: none;
   position: absolute;
 }
-.show{
+.show {
   display: block;
 }
 .checkbox__title {
@@ -1151,6 +1168,14 @@ footer {
   }
 }
 @media (max-width: 470px) {
+  .telegram__widget{
+    width: 55px;
+    height: 55px;
+  }
+  .telegram__img{
+    width: 55px;
+    height: 55px;
+  }
   .intro__header {
     max-width: 300px;
   }
