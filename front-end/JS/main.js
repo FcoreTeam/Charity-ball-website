@@ -23,7 +23,6 @@ sendBtn.addEventListener("click", () => {
 
   let data = compareData(initials, phone, telegram, people, help, rental);
   sendRequest(data);
-  console.log(data);
 });
 
 const checkboxHandle = () => {
@@ -96,5 +95,21 @@ const burgerHandle = (state) => {
     burger.classList.add("burger__open");
   } else {
     burger.classList.remove("burger__open");
+  }
+};
+
+const handlePopup = (state) => {
+  const popup = document.querySelector(".participation__popup__wrap");
+  const image = document.querySelector(".popup__image");
+  if (state) {
+    let randomImage = Math.random();
+    if (randomImage > 0.5) {
+      image.src = "./IMG/bannerFirst.png";
+    } else {
+      image.src = "./IMG/bannerSecond.png";
+    }
+    popup.classList.add("show__popup");
+  } else {
+    popup.classList.remove("show__popup");
   }
 };

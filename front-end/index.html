@@ -13,6 +13,42 @@
     <title>Первый благотворительный бал гимназии им. А.Л. Кекина</title>
   </head>
   <body>
+    <div class="participation__popup__wrap">
+      <div class="participation__popup">
+        <img src="./IMG/bannerFirst.png" alt="" class="popup__image" />
+        <div class="popup__body">
+          <div class="popup__header">
+            <img
+              src="./IMG/cross.svg"
+              alt=""
+              class="popup__cross"
+              onclick="handlePopup(false)"
+            />
+          </div>
+          <div class="popup__content">
+            <p class="popup__title">Условие участия</p>
+            <p class="popup__description">
+              Взнос в целевой капитал гимназии имени А.Л. Кекина.
+            </p>
+            <p class="souvenirs__subtitle">Размеры взносов:</p>
+            <div class="souvenir first__souvenir souvenir__popup">
+              <p class="souvenir__price">50 000 рублей</p>
+            </div>
+            <div class="souvenir second__souvenir souvenir__popup">
+              <p class="souvenir__price">100 000 рублей</p>
+            </div>
+            <div class="souvenir third__souvenir souvenir__popup">
+              <p class="souvenir__price">200 000 рублей и более</p>
+            </div>
+            <p class="popup__subtitle">
+              Входным билетом для вашей семьи служит сертификат, который
+              автоматически придет на электронную почту.
+            </p>
+            <button class="popup__btn">Сделать взнос</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <a
       href="https://t.me/gimnaziya_kekina_podderzhkabot"
       class="telegram__widget"
@@ -39,11 +75,7 @@
         <a onclick="headerHandle('Контакты')"> Контакты </a>
       </li>
 
-      <a
-        href="https://legacy-ef.com/tselevye-kapitaly/gimnaziya-imeni-a-l-kekina/"
-        class="header__btn"
-        >Принять участие</a
-      >
+      <a onclick="handlePopup(true)" class="header__btn">Принять участие</a>
       <div class="burger" onclick="burgerHandle(1)">
         <span></span>
       </div>
@@ -68,9 +100,10 @@
               Первый семейный бал благотворителей гимназии А.Л. Кекина
             </h1>
             <h2 class="intro__description">
-                Войдите в историю, сделав вклад в целевой капитал гимназии А.Л. Кекина!
-                Мужская классическая гимназия - воплощенная мечта статского советника, купца первой гильдии, 
-                непревзойдённого ростовского мецената Алексея Леонтьевича Кекина (1838 - 1897).
+              Войдите в историю, сделав вклад в целевой капитал гимназии А.Л.
+              Кекина! Мужская классическая гимназия - воплощенная мечта
+              статского советника, купца первой гильдии, непревзойдённого
+              ростовского мецената Алексея Леонтьевича Кекина (1838 - 1897).
             </h2>
             <!--<div class="intro__partners">
               <p class="intro__partners__title">Генеральные партнёры</p>
@@ -93,11 +126,9 @@
             </div>-->
           </section>
           <section class="intro__btns">
-            <a
-              href="https://legacy-ef.com/tselevye-kapitaly/gimnaziya-imeni-a-l-kekina/"
-            >
-              <button class="buy__btn">Принять участие</button>
-            </a>
+            <button class="buy__btn" onclick="handlePopup(true)">
+              Принять участие
+            </button>
 
             <!--<a
               href="https://legacy-ef.com/tselevye-kapitaly/gimnaziya-imeni-a-l-kekina/"
@@ -172,7 +203,8 @@
           <div class="schedule__info second__info">
             <p class="schedule__name">Живая музыка</p>
             <p class="schedule__description">
-              На вечере для вас будет звучать живая музыка в исполнении квартета<br>
+              На вечере для вас будет звучать живая музыка в исполнении
+              квартета<br />
               А.О. Нероновой из города Москвы. Музыка является обязательным
               аккомпанементом к нашим танцам, а также прекрасно будет заполнять
               моменты общения гостей. Уверены, что музыкальные произведения XIX
@@ -223,18 +255,6 @@
       <section class="souvenirs">
         <div class="souvenirs__wrap">
           <div class="souvenirs__info">
-            <p class="souvenirs__title">Впиши свое имя в историю</p>
-            <p class="souvenirs__description">
-              Гимназия имени А.Л. Кекина основана в 1907 году. Великолепное
-              здание для мужской классической гимназии было построено в 1910
-              году архитектором Павлом Алексеевичем Трубниковым. Роскошный
-              бальный зал, большая аудитория под стать университетской,
-              естественно-научные лаборатории, собственная обсерватория,
-              большой спортивный зал… Здание уникально архитектурой, учебное
-              заведение - своим содержанием. Гимназия с первых дней стала одной
-              из лучших в России. Высокое качество образования и неповторимая
-              инновационная атмосфера сохраняются в гимназии по сей день.
-            </p>
             <p class="souvenirs__subtitle">Сувениры благотворителям</p>
             <div class="souvenir first__souvenir">
               <p class="souvenir__price">50 000 рублей</p>
@@ -253,17 +273,11 @@
               alt=""
               class="souvenirs__image image__phone"
             />
-            <a
-              href="https://legacy-ef.com/tselevye-kapitaly/gimnaziya-imeni-a-l-kekina/"
-              ><button class="souvenirs__btn">Принять участие</button></a
-            >
+            <button class="souvenirs__btn" onclick="handlePopup(true)">
+              Принять участие
+            </button>
           </div>
           <div class="souvenirs__images">
-            <img
-              src="./IMG/kekinPrint.png"
-              alt=""
-              class="souvenirs__particle"
-            />
             <img src="./IMG/souvenirs.png" alt="" class="souvenirs__image" />
           </div>
         </div>
@@ -326,8 +340,9 @@
             <div class="program__schedule__block first__program">
               <p class="program__time first__time">11:00</p>
               <p class="program__description">
-                  Посещение церкви Паисия и Уара в Варницах, построенную на средства<br> А.Л.
-                Кекина, под сводом которой он захоронен.<br /><br />
+                Посещение церкви Паисия и Уара в Варницах, построенную на
+                средства<br />
+                А.Л. Кекина, под сводом которой он захоронен.<br /><br />
                 Троице-Сергиев Варницкий монастырь, основанный по преданию на
                 месте рождения св. Сергия Радонежского, и на месте явления ему,
                 отроку Варфоломею, старца черноризца (по запросу). <br /><br />
@@ -347,12 +362,13 @@
         <p class="partners__title">Партнёры</p>
         <div class="partners__list">
           <p class="list">
-            Артель<span> X </span>Рыбаков Фонд<span> X </span>Гимназия имени А.Л.
-            Кекина<span> X </span>Историческое общество «N»<span> X </span
+            Артель<span> X </span>Рыбаков Фонд<span> X </span>Гимназия имени
+            А.Л. Кекина<span> X </span>Историческое общество «N»<span> X </span
             >Троице-Сергиев Варницкий монастырь <span> X </span>Музей «Дом
             ростовского купечества»<span> X </span>Государственный
             музей-заповедник «Ростовский кремль»<span> X </span>Администрация
-            Ростовского муниципального района Ярославской области<span> X </span>LEGACY ES
+            Ростовского муниципального района Ярославской области<span> X </span
+            >LEGACY ES
           </p>
         </div>
       </section>
