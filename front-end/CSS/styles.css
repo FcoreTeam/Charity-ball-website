@@ -16,7 +16,7 @@
   margin-right: 20px;
   margin-bottom: 20px;
 }
-.telegram__img{
+.telegram__img {
   width: 67px;
   height: 67px;
 }
@@ -1168,11 +1168,11 @@ footer {
   }
 }
 @media (max-width: 470px) {
-  .telegram__widget{
+  .telegram__widget {
     width: 55px;
     height: 55px;
   }
-  .telegram__img{
+  .telegram__img {
     width: 55px;
     height: 55px;
   }
